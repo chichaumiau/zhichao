@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[智超的中文博客]]></title>
   <link href="http://chichaumiau.github.io/zhichao/atom.xml" rel="self"/>
   <link href="http://chichaumiau.github.io/zhichao/"/>
-  <updated>2017-10-21T00:20:47+01:00</updated>
+  <updated>2017-10-21T00:24:09+01:00</updated>
   <id>http://chichaumiau.github.io/zhichao/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[苗智超]]></name>
+    <email><![CDATA[chichaumiau@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
