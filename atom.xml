@@ -4,7 +4,7 @@
   <title><![CDATA[智超的中文博客]]></title>
   <link href="http://chichaumiau.github.io/zhichao/atom.xml" rel="self"/>
   <link href="http://chichaumiau.github.io/zhichao/"/>
-  <updated>2017-10-21T08:24:06+01:00</updated>
+  <updated>2017-10-21T20:02:25+01:00</updated>
   <id>http://chichaumiau.github.io/zhichao/</id>
   <author>
     <name><![CDATA[苗智超]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[快速安装octopress]]></title>
+    <link href="http://chichaumiau.github.io/zhichao/blog/2017/10/21/install-octopress/"/>
+    <updated>2017-10-21T19:38:57+01:00</updated>
+    <id>http://chichaumiau.github.io/zhichao/blog/2017/10/21/install-octopress</id>
+    <content type="html"><![CDATA[<h1>快速安装Octopress</h1>
+
+<p>首先，Octopress号称是给黑客使用的博客框架。如果你不喜欢命令行，那么可以考虑用<a href="https://wordpress.org/">wordpress</a>之类的框架。我也用wordpress+<a href="https://www.heroku.com/">heroku</a>+<a href="http://w2.cleardb.net/">clearDB</a>建过博客，也挺方便。</p>
+
+<h2>安装前准备</h2>
+
+<p>安装 <a href="https://git-scm.com/">Git</a>. <br/>
+安装 Ruby 1.9.3 or greater using either rbenv or RVM.<br/>
+Install one of the ExecJS supported JavaScript runtimes.<br/>
+If ruby &ndash;version doesn&rsquo;t say you&rsquo;re using Ruby at least 1.9.3, revisit your rbenv or RVM installation.</p>
+
+<h2>安装Octopress</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress(或者取一个你的博客的名字)
+</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
+
+
+<p>octopress会被下载到本地一个文件夹内，如果你打算弄几个博客，那么给每个博客取个名字，不要用octopress了。</p>
+
+<p>然后，安装依赖库.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command   
+</span><span class='line'>bundle install    </span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后安装Octopress主题.<br/>
+默认主题是：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我本人非常喜欢<a href="http://getbootstrap.com/">bootstrap</a>的风格，所以安装了<a href="https://github.com/bobwaycott/octostrap">octostrap</a>，也就是octopress的bootstrap主题。主题是存在<code>.themes／</code> 文件夹下的。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/kAworu/octostrap3.git .themes/octostrap3
+</span><span class='line'>rake install[octostrap3]</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Test]]></title>
