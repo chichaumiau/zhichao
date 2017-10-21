@@ -4,7 +4,7 @@
   <title><![CDATA[智超的中文博客]]></title>
   <link href="http://chichaumiau.github.io/zhichao/atom.xml" rel="self"/>
   <link href="http://chichaumiau.github.io/zhichao/"/>
-  <updated>2017-10-21T20:29:22+01:00</updated>
+  <updated>2017-10-21T20:36:45+01:00</updated>
   <id>http://chichaumiau.github.io/zhichao/</id>
   <author>
     <name><![CDATA[苗智超]]></name>
@@ -70,7 +70,7 @@
 
 <p>写完以后，就可以发布博文了。</p>
 
-<h2>发布博文</h2>
+<h2>预览博文</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
@@ -79,12 +79,28 @@
 <p>这个命令会把markdown的页面翻译成<code>_deploy/</code>文件夹下的html页面。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个使你可以在本地预览博客页面。运行后，在浏览器打开<code>http://localhost:4000/</code>就可以看到你的页面了。</p>
+
+<h2>发布博文</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo rake deploy</span></code></pre></td></tr></table></div></figure>
 
 
 <p>这个会把博文发布到github。<strong>这里用了超级用户权限，因为有时候会有权限问题。</strong></p>
 
 <p>然后就可以到<code>username.github.io</code>或者<code>https://username.github.io／repository_name</code>查看你的博客了。</p>
+
+<p>还有一个简化命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就是<code>rake generate</code>和<code>rake deploy</code>的结合。</p>
 ]]></content>
   </entry>
   
