@@ -4,7 +4,7 @@
   <title><![CDATA[智超的中文博客]]></title>
   <link href="http://chichaumiau.github.io/zhichao/atom.xml" rel="self"/>
   <link href="http://chichaumiau.github.io/zhichao/"/>
-  <updated>2017-10-21T21:01:28+01:00</updated>
+  <updated>2017-10-21T22:21:18+01:00</updated>
   <id>http://chichaumiau.github.io/zhichao/</id>
   <author>
     <name><![CDATA[苗智超]]></name>
@@ -43,8 +43,8 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>:~$ cd octopress
-</span><span class='line'>:~$ vi _config.yml
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>vim _config.yml
 </span><span class='line'>
 </span><span class='line'>disqus_short_name: my_disqus_userid # replace it with the userid (not email address) you created in disqus
 </span><span class='line'>disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure>

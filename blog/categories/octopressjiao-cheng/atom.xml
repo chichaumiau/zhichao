@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress教程 | 智超的中文博客]]></title>
   <link href="http://chichaumiau.github.io/zhichao/blog/categories/octopressjiao-cheng/atom.xml" rel="self"/>
   <link href="http://chichaumiau.github.io/zhichao/"/>
-  <updated>2017-10-21T21:01:28+01:00</updated>
+  <updated>2017-10-21T22:21:18+01:00</updated>
   <id>http://chichaumiau.github.io/zhichao/</id>
   <author>
     <name><![CDATA[苗智超]]></name>
@@ -38,8 +38,8 @@
 
 <h2>安装Disqus</h2>
 
-<pre><code>:~$ cd octopress
-:~$ vi _config.yml
+<pre><code>cd octopress
+vim _config.yml
 
 disqus_short_name: my_disqus_userid # replace it with the userid (not email address) you created in disqus
 disqus_show_comment_count: true
