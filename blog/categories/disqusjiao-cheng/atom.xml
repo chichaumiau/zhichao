@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Disqus教程 | 智超的中文博客]]></title>
+  <link href="http://chichaumiau.github.io/zhichao/blog/categories/disqusjiao-cheng/atom.xml" rel="self"/>
+  <link href="http://chichaumiau.github.io/zhichao/"/>
+  <updated>2017-10-21T20:59:29+01:00</updated>
+  <id>http://chichaumiau.github.io/zhichao/</id>
+  <author>
+    <name><![CDATA[苗智超]]></name>
+    <email><![CDATA[chichaumiau@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[给博客添加评论功能]]></title>
+    <link href="http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/"/>
+    <updated>2017-10-21T20:39:10+01:00</updated>
+    <id>http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment</id>
+    <content type="html"><![CDATA[<h1>给博客添加评论功能</h1>
+
+<p>建了一网站，你会希望有人评论。Octopress自带disqus的整合功能。下面说说怎么添加这个评论功能。</p>
+
+<h2>准备工作</h2>
+
+<ul>
+<li>注册<a href="https://disqus.com/">Disqus</a>
+
+<ul>
+<li>你也可以不注册，直接用google或者facebook账号登陆就行。</li>
+</ul>
+</li>
+<li>然后选择 <code>install disqus</code>(或者去<a href="https://disqus.com/profile/signup/intent/">https://disqus.com/profile/signup/intent/</a>)，选择<code>I want to install Disqus on my site</code>。</li>
+<li>然后一推配置，随便你选就行了。</li>
+</ul>
+
+
+<h2>安装Disqus</h2>
+
+<pre><code>:~$ cd octopress
+:~$ vi _config.yml
+
+disqus_short_name: my_disqus_userid # replace it with the userid (not email address) you created in disqus
+disqus_show_comment_count: true
+</code></pre>
+
+<p>也就是把<code>_config.yml</code>文件中的<code>disqus_show_comment_count:</code>改成<code>true</code>,在<code>disqus_short_name:</code>加上disqus名字就行了。</p>
+]]></content>
+  </entry>
+  
+</feed>

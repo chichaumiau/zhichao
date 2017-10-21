@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>用Octopress在GitHub发布博客 - 智超的中文博客</title>
+  <title>给博客添加评论功能 - 智超的中文博客</title>
   <meta name="author" content="苗智超">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chichaumiau.github.io/zhichao/blog/2017/10/21/deploy-github-page/">
+  <link rel="canonical" href="http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/">
   <link href="/zhichao/favicon.png" type="image/png" rel="icon">
   <link href="/zhichao/atom.xml" rel="alternate" title="智超的中文博客" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://chichaumiau.github.io/zhichao/blog/2017/10/21/deploy-github-page/">
-  <meta property="og:title" content="用Octopress在GitHub发布博客 - 智超的中文博客">
+  <meta property="og:url" content="http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/">
+  <meta property="og:title" content="给博客添加评论功能 - 智超的中文博客">
   
 
   <script src="/zhichao/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
@@ -119,7 +119,7 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-10-21T20:07:12+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-10-21T20:39:10+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
            | <a href="#disqus_thread" itemprop="discussionUrl"
              data-disqus-identifier="http://chichaumiau.github.io/zhichao">Comments</a>
@@ -128,96 +128,46 @@
     
     
     <h1 class="entry-title" itemprop="name headline">
-        用Octopress在GitHub发布博客
+        给博客添加评论功能
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><h1>用Octopress在GitHub发布博客</h1>
+<div class="entry-content clearfix" itemprop="articleBody description"><h1>给博客添加评论功能</h1>
 
-<p>Octopress可以配合<a href="https://github.com/">github</a>或者heroku使用。Github还是最方便的，用户可以有无限的public空间。</p>
+<p>建了一网站，你会希望有人评论。Octopress自带disqus的整合功能。下面说说怎么添加这个评论功能。</p>
 
-<h2>配置Octopress前准备github</h2>
-
-<ul>
-<li>注册<a href="https://github.com/">github</a>账号</li>
-<li>建一个新的repository。
+<h2>准备工作</h2>
 
 <ul>
-<li>如果是github主站，域名是<code>username.github.io</code>, 那么repository的名字就是<code>username.github.io</code>。</li>
-<li>如果不是主站，而是项目页（gh-pages），域名是<code>https://username.github.io／repository_name</code>, 那么repository的名字就是<code>repository_name</code>。</li>
+<li>注册<a href="https://disqus.com/">Disqus</a>
+
+<ul>
+<li>你也可以不注册，直接用google或者facebook账号登陆就行。</li>
 </ul>
 </li>
+<li>然后选择 <code>install disqus</code>(或者去<a href="https://disqus.com/profile/signup/intent/">https://disqus.com/profile/signup/intent/</a>)，选择<code>I want to install Disqus on my site</code>。</li>
+<li>然后一推配置，随便你选就行了。</li>
 </ul>
 
 
-<h2>配置Octopress</h2>
+<h2>安装Disqus</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:~$ cd octopress
+</span><span class='line'>:~$ vi _config.yml
+</span><span class='line'>
+</span><span class='line'>disqus_short_name: my_disqus_userid # replace it with the userid (not email address) you created in disqus
+</span><span class='line'>disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这个命令会:</p>
-
-<ul>
-<li>问你github的url。
-
-<ul>
-<li>如果是github主站，域名是<code>username.github.io</code>, 那么输入<code>git@github.com:username/username.github.io.git</code>。</li>
-<li>如果不是主站，而是项目页（gh-pages），域名是<code>https://username.github.io／repository_name</code>, 那么输入<code>http://username.github.io/repository_name</code>。</li>
-</ul>
-</li>
-<li><del>Rename the remote pointing to imathis/octopress from &lsquo;origin&rsquo; to &lsquo;octopress&rsquo;</del></li>
-<li><del>Add your Github Pages repository as the default origin remote.</del></li>
-<li><del>Switch the active branch from master to source.</del></li>
-<li><del>Configure your blog&rsquo;s url according to your repository.</del></li>
-<li><del>Setup a master branch in the _deploy directory for deployment.</del></li>
-</ul>
-
-
-<h2>新建博文</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这样就会产生一个source/_posts/日期-title.markdown的markdown文件。只要用markdown的语法写博文就可以了。</p>
-
-<p>写完以后，就可以发布博文了。</p>
-
-<h2>预览博文</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这个命令会把markdown的页面翻译成<code>_deploy/</code>文件夹下的html页面。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这个使你可以在本地预览博客页面。运行后，在浏览器打开<code>http://localhost:4000/</code>就可以看到你的页面了。</p>
-
-<h2>发布博文</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这个会把博文发布到github。<strong>这里用了超级用户权限，因为有时候会有权限问题。</strong></p>
-
-<p>然后就可以到<code>username.github.io</code>或者<code>https://username.github.io／repository_name</code>查看你的博客了。</p>
-
-<p>还有一个简化命令</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>就是<code>rake generate</code>和<code>rake deploy</code>的结合。</p>
+<p>也就是把<code>_config.yml</code>文件中的<code>disqus_show_comment_count:</code>改成<code>true</code>,在<code>disqus_short_name:</code>加上disqus名字就行了。</p>
 </div>
 
 
@@ -241,13 +191,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-10-21T20:07:12+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-10-21T20:39:10+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/zhichao/blog/categories/octopressjiao-cheng/'>octopress教程</a>
+    <a class='category' href='/zhichao/blog/categories/disqusjiao-cheng/'>disqus教程</a>, <a class='category' href='/zhichao/blog/categories/octopressjiao-cheng/'>octopress教程</a>
   
 </span>
 
@@ -256,7 +206,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://chichaumiau.github.io/zhichao/blog/2017/10/21/deploy-github-page/" data-via="" data-counturl="http://chichaumiau.github.io/zhichao/blog/2017/10/21/deploy-github-page/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/" data-via="" data-counturl="http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/" >Tweet</a>
   
   
   
@@ -266,10 +216,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/zhichao/blog/2017/10/21/install-octopress/" title="Previous Post: 快速安装octopress">&laquo; 快速安装octopress</a></li>
+            <li class="previous"><a href="/zhichao/blog/2017/10/21/deploy-github-page/" title="Previous Post: 用Octopress在GitHub发布博客">&laquo; 用Octopress在GitHub发布博客</a></li>
             
-            
-            <li class="next"><a href="/zhichao/blog/2017/10/21/disqus-comment/" title="Next Post: 给博客添加评论功能">给博客添加评论功能 &raquo;</a></li>
             
           </ul>
         
@@ -294,9 +242,9 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/zhichao/blog/2017/10/21/disqus-comment/">给博客添加评论功能</a>
+    <a class="list-group-item active" href="/zhichao/blog/2017/10/21/disqus-comment/">给博客添加评论功能</a>
     
-    <a class="list-group-item active" href="/zhichao/blog/2017/10/21/deploy-github-page/">用Octopress在GitHub发布博客</a>
+    <a class="list-group-item " href="/zhichao/blog/2017/10/21/deploy-github-page/">用Octopress在GitHub发布博客</a>
     
     <a class="list-group-item " href="/zhichao/blog/2017/10/21/install-octopress/">快速安装octopress</a>
     
@@ -334,8 +282,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://chichaumiau.github.io/zhichao/blog/2017/10/21/deploy-github-page/';
-        var disqus_url = 'http://chichaumiau.github.io/zhichao/blog/2017/10/21/deploy-github-page/';
+        var disqus_identifier = 'http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/';
+        var disqus_url = 'http://chichaumiau.github.io/zhichao/blog/2017/10/21/disqus-comment/';
         var disqus_script = 'embed.js';
       
     (function () {
